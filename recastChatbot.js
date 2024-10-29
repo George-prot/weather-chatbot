@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config({ path: 'C:/Users/aek_g/Desktop/weather-chatbot/openweatherApiKey.env' });
+require('dotenv').config({ path: './openweatherApiKey.env' });
 
 const RECAST_API_TOKEN = process.env.RECAST_API_TOKEN;
 const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
@@ -31,7 +31,7 @@ const getWeather = async (city) => {
     try {
         const response = await axios.get(url);
         const data = response.data;
-        return `The weather in ${city} is ${data.weather[0].description} with a temperature of ${data.main.temp}°C.`;
+        return `The weather in ${city} is ${data.weather[0].description} with a temperature of ${data.main.temp}Â°C.`;
     } catch (error) {
         return 'Could not retrieve weather data. Please check the city name or try again later.';
     }
