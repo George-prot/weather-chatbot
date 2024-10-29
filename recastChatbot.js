@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config({ path: 'C:/Users/aek_g/Desktop/weather-chatbot/openweatherApiKey.env' });
+require('dotenv').config({ path: './openweatherApiKey.env' });
 
 const RECAST_API_TOKEN = process.env.RECAST_API_TOKEN;
 const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
