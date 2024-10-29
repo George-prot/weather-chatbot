@@ -33,6 +33,7 @@ app.post('/webhook', async (req, res) => {
         const description = weatherData.weather[0].description;
         const temp = weatherData.main.temp;
 
+        // Return weather data from OpenWeatherMap API
         const responseText = `The weather in ${city} is currently ${description} with a temperature of ${temp}\u00B0C.`;
 
         return res.json({
