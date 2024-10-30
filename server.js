@@ -8,8 +8,17 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse JSON requests
 app.use(express.json());
 
+// Ensure the API key is defined
+if (!process.env.OPENWEATHER_API_KEY) {
+    console.error('ERROR: OpenWeatherMap API key is not set. Please check your .env file.');
+    process.exit(1); // Exit if the key is missing
+}
+
 // Dialogflow Webhook Endpoint
 app.post('/webhook', async (req, res) => {
+
+    console.log('Received webhook request:', req.body); // Log the incoming request for debugging
+
     try {
         // Get the city parameter from Dialogflow's request
         const city = req.body.queryResult.parameters.city;
