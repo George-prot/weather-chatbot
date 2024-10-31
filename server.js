@@ -23,7 +23,7 @@ app.post('/webhook', async (req, res) => {
 
     try {
         // Get the city parameter from Dialogflow's request
-        const city = req.body.queryResult.parameters.city;
+        const city = req.body.queryResult.parameters.address.city;
 
         if (!city) {
             return res.json({
