@@ -63,3 +63,8 @@ app.post('/webhook', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`The Server is running on port ${PORT}`);
 });
+
+app.all('*', (req, res) => {
+    console.log('Received unknown request on path:', req.path);
+    res.status(404).send('Route not found');
+});
