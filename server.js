@@ -17,6 +17,8 @@ if (!process.env.OPENWEATHER_API_KEY) {
 // Dialogflow Webhook Endpoint
 app.post('/webhook', async (req, res) => {
 
+    console.log('Webhook endpoint hit');
+    res.status(200).send('Webhook received');
     console.log('Received webhook request:', req.body); // Log the incoming request for debugging
 
     try {
