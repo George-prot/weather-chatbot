@@ -5,7 +5,7 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware to parse JSON requests
+// Middleware to parse JSON request
 app.use(express.json());
 
 // Ensure the API key is defined
