@@ -57,6 +57,7 @@ app.post('/webhook', async (req, res) => {
     }
 
 });
+// Test route for root
 app.get('/', (req, res) => {
     res.send('Root route is working');
 });
