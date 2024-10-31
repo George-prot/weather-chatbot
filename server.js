@@ -18,6 +18,7 @@ if (!process.env.OPENWEATHER_API_KEY) {
 app.post('/webhook', async (req, res) => {
 
     console.log('Received webhook request:', req.body); // Log the incoming request for debugging
+    res.status(200).send('Webhook received successfully');
 
     try {
         // Get the city parameter from Dialogflow's request
@@ -55,8 +56,9 @@ app.post('/webhook', async (req, res) => {
             fulfillmentText: "I couldn't retrieve the weather data at the moment. Please try again later."
         });
     }
-});
 
+});
+//const PORT = process.env.PORT || 5000;
 // Start the server
 app.listen(PORT, () => {
     console.log(`The Server is running on port ${PORT}`);
