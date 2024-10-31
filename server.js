@@ -57,6 +57,9 @@ app.post('/webhook', async (req, res) => {
     }
 
 });
+app.get('/', (req, res) => {
+    res.send('Root route is working');
+});
 //const PORT = process.env.PORT || 5000;
 // Start the server
 app.listen(PORT, () => {
