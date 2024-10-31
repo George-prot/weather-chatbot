@@ -18,7 +18,6 @@ if (!process.env.OPENWEATHER_API_KEY) {
 app.post('/webhook', async (req, res) => {
 
     console.log('Received webhook request:', req.body); // Log the incoming request for debugging
-    res.status(200).send('Webhook received successfully');
 
     try {
         // Get the city parameter from Dialogflow's request
