@@ -22,7 +22,8 @@ app.post('/webhook', async (req, res) => {
     const city = req.body.queryResult.parameters.address?.city || lastCity;
     const temp_unit = req.body.queryResult.parameters.unit || 'C';
     const dateTime = req.body.queryResult.parameters['date-time'];
-
+    console.log('Start Date:', dateTime.startDate);
+    console.log('End Date:', dateTime.endDate);
     if (!city) {
         return res.json({
             fulfillmentText: "Please specify the city you'd like weather information for."
