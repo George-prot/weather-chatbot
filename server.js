@@ -56,10 +56,8 @@ app.post('/webhook', async (req, res) => {
             });
         }
 
-        //const startDate = new Date(dateTime.startDate || dateTime);
-        //const endDate = dateTime.endDate ? new Date(dateTime.endDate) : null;
-        const startDate = new Date("2024-11-03T00:00:00+02:00");
-        const endDate = new Date("2024-11-07T23:59:59+02:00");
+        const startDate = new Date(dateTime.startDate || dateTime);
+        const endDate = dateTime.endDate ? new Date(dateTime.endDate) : null;
 
         // Check if request is for a single date (no endDate) or a range
         if (!endDate) {
