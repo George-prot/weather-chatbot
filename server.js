@@ -145,7 +145,7 @@ app.post('/webhook', async (req, res) => {
 
             if (endDate > fiveDaysLater) {
                 return res.json({
-                    fulfillmentText: `Note: I can only provide up to 5 days of forecast data. Here’s the forecast for ${city} from ${startDate.toLocaleDateString()} to ${fiveDaysLater.toLocaleDateString()}:\n${responseText}\n\n`
+                    fulfillmentText: `Note: I can only provide up to 5 days of forecast data. Here's the forecast for ${city} from ${startDate.toLocaleDateString()} to ${fiveDaysLater.toLocaleDateString()}:\n${responseText}\n\n`
                 });
             } else {
                 return res.json({
